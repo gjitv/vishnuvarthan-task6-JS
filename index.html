@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+    <div id="practice"></div>
+    <div id="cars"></div>
+    <button onclick="this.style.display='none'">
+        Click to see me disappear
+    </button>
+
+    <script>
+
+        //Four types of function
+
+        const function1=()=>{
+           console.log("function type 1");
+        }
+        const function2=(a,b)=>{
+            console.log(a+b);
+        }
+        const function3=(a,b)=>{
+            return(a*b);
+        }
+        const function4=()=>{
+            return ("type4");
+        }
+
+        //objects
+
+        const player={
+            Name:"Suresh Raina",
+            Age:"36",
+            BattingStyle:"Left Handed",
+            Runs:"5500",
+            statement:function(){
+               return "I am " + this.Name + " and my batting style " + this.BattingStyle;
+            }
+        }
+       
+        document.getElementById("practice").innerHTML=player.statement();
+
+        //string methods
+
+        let string1 = "this is ISrael";
+        strArr=string1.match(/is/gi);
+        console.log(strArr);
+
+        //string template literals
+
+        let str1="hey"
+        let str2="google"
+        let str3=`the result is:  ${str1} ${str2} `
+        console.log(str3);
+
+        //String Interpolation
+
+        let heading="Cars";
+        let examples=["ford", "Hyundai", "Suzuki", "honda"];
+
+        let allcars=`<h2>${heading}</h2><ul>`;
+        for(const x of examples){
+            allcars+= `<li>${x}</li>`
+        }
+        allcars += `</ul>`;
+        document.getElementById("cars").innerHTML= allcars;
+
+    </script>
+
+</body>
