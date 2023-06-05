@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <head>
-
+    <title>Javascript Practice</title>
 </head>
 <body>
     <div id="practice"></div>
     <div id="cars"></div>
+    <div id="fruits"></div>
+
     <button onclick="this.style.display='none'">
         Click to see me disappear
     </button>
@@ -65,6 +67,89 @@
         allcars += `</ul>`;
         document.getElementById("cars").innerHTML= allcars;
 
+        // arrays
+        //static declaration
+        const fruits=["banana", "apple", "orange", 456];
+        fruits.push("pineapple");
+         document.getElementById("fruits").innerHTML= fruits.toString();
+        console.log(fruits.length);
+
+        //looping an array
+
+        //for loop
+        let allfruits= "<ul>";
+        for(let i=0; i<fruits.length; i++){
+            allfruits+= "<li>" +fruits[i] +"</li>";
+        }
+        allfruits+="</ul>"
+        document.getElementById("fruits").innerHTML= allfruits;
+        
+        //dynamic declaration
+        const books=[];
+        books[0]="tamilbooks";
+        books[1]="Englishbooks";
+        books[2]="Mathsbooks";
+        books[3]="physicsbooks";
+
+        console.log(books);
+
+        //array sort
+        array2=[1,6,3,2,5,8,34,23,45,21];
+        array2.sort(function(a,b){return b-a});
+        console.log(array2)
+
+        //map method
+
+        const mapfunc=(value, index)=>{
+            return value+2;
+        }
+        array3=array2.map(mapfunc);
+        console.log(array3);
+
+        const students=[
+            {
+                id:1,
+                firstName:"vishnu",
+                lastName:"varthan"
+            },
+            {
+                id:2,
+                firstName:"Ram Charan",
+                lastName:"varthan"
+            },
+            {
+                id:3,
+                firstName:"Sundar",
+                lastName:"varthan"
+            },
+            {
+                id:4,
+                firstName:"Ari",
+                lastName:"Krishnan"
+            }
+        ]
+        //returning fullname and id through map method
+           fullName= students.map(function(val){
+            let fullName= val.firstName +" "+ val.lastName;
+                return {id:val.id, fullName:fullName};
+            })
+            console.log(fullName);
+        
+            //every
+            arr4=[-23, -23, 34, -65, -2]
+            const greater1= arr4.some((val)=>{
+                return val>0;
+            })
+            console.log(greater1);
+            let pos= arr4.indexOf(34, -4);
+            console.log(pos);
+
+            // spread operator
+            let arr5=[4,"45", "48","firtd"];
+            let arr6=[2,"425", "48222","dbdvrtd"];
+            let arr7=[...arr5,...arr6];
+
+            console.log(arr7);
     </script>
 
 </body>
